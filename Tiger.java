@@ -15,6 +15,24 @@ public class Tiger extends Critter{
 
     public Tiger(){
 
+        /*
+            Tiger: Try running the simulator with just 30 Tigers in the world.
+            You should see about one third of them being red and one third being green
+            and one third being blue.
+            Use the "step" button to make sure that the colors alternate properly.
+            They should keep these initial colors for three moves.
+            That means that they should stay this color while
+            the simulator is indicating that it is step 0, step 1, and step 2.
+            They should switch colors when the simulator indicates that
+            you are up to step 3 and should stay with these new colors for steps 4 and 5.
+            Then you should see a new color scheme for steps 6, 7, and 8 and so on.
+            When you click "start" you should see them bouncing off of walls.
+            When they bump into a wall, they should turn around
+            and head back in the direction they came.
+            They will sometimes bump into each other as well.
+            They shouldn't end up clustering together anywhere.
+         */
+
         this.color = getColor();
     }
 

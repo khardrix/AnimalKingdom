@@ -15,6 +15,18 @@ public class Bear extends Critter{
 
     public Bear(){
 
+        /*
+            Bear: Try running the simulator with just 30 bears in the world.
+            You should see about half of them being white and about half being black.
+            Initially they should all be displayed with slash characters.
+            When you click "step", they should all switch to backslash characters.
+            When you click "step" again they should go back to slash characters and so on.
+            When you click "start", you should observe the bears heading towards walls
+            and then hugging the walls in a counterclockwise direction.
+            They will sometimes bump into each other and go off in other directions,
+            but their tendency should be to follow along the walls.
+         */
+
         this.polar = isPolar();
         this.color = getColor();
     }
