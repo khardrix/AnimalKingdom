@@ -6,10 +6,8 @@ import java.util.Random;
 
 public class Bear extends Critter{
 
-    Random dice = new Random();
-    private int number;
+    private Random dice = new Random();
     private int moveCount = 0;
-    private Color color;
     private boolean polar;
 
 
@@ -27,18 +25,18 @@ public class Bear extends Critter{
             but their tendency should be to follow along the walls.
          */
 
+
+
         this.polar = isPolar();
-        this.color = getColor();
+        getColor();
     }
 
 
     public boolean isPolar(){
 
-        number = dice.nextInt(2);
-        if(number == 1)
-            return true;
-        else
-            return false;
+        polar = dice.nextBoolean();
+
+        return polar;
     }
 
 
@@ -49,11 +47,7 @@ public class Bear extends Critter{
             Color.BLACK otherwise (when polar is false)
          */
 
-        if(polar){
-            return Color.WHITE;
-        }else{
-            return Color.BLACK;
-        }
+        return polar ? Color.WHITE : Color.BLACK;
     }
 
 
@@ -64,11 +58,7 @@ public class Bear extends Critter{
             and a backslash character (\) starting with a slash.
          */
 
-        if(moveCount % 2 == 0){
-            return "/";
-        }else{
-            return "\\";
-        }
+        return moveCount % 2 == 0 ? "/" : "\\";
     }
 
 
