@@ -23,8 +23,6 @@ public class Giant extends  Critter{
             When you click "start", you should observe the same kind of wall-hugging behavior
             that bears have, but this time in a clockwise direction.
          */
-
-        toString();
     }
 
 
@@ -71,6 +69,12 @@ public class Giant extends  Critter{
          */
 
         moveCount++;
-        return Action.HOP;
+        if(info.getFront() == Neighbor.OTHER) {
+            return Action.INFECT;
+        }else if(info.getFront() == Neighbor.EMPTY){
+            return Action.HOP;
+        }else{
+            return Action.RIGHT;
+        }
     }
 }
