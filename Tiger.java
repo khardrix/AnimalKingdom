@@ -56,11 +56,13 @@ public class Tiger extends Critter{
             otherwise if a wall is in front or to the right, then turn left,
             otherwise if a fellow Tiger is in front, then turn right, otherwise hop.
          */
+
         moveCount++;
         if(moveCount % 3 == 0) {
             this.color = getColor();
             moveCount = 0;
         }
+
         if(info.getFront() == Neighbor.OTHER)
             return Action.INFECT;
         else if((info.getFront() == Neighbor.WALL) || (info.getRight() == Neighbor.WALL))
