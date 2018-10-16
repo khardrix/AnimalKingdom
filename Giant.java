@@ -45,7 +45,7 @@ public class Giant extends  Critter{
             then "fum" for 6 moves, then repeat.
          */
 
-        if(moveCount > 24){
+        if(moveCount >= 24){
             moveCount = 0;
         }
 
