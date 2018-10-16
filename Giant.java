@@ -47,20 +47,20 @@ public class Giant extends  Critter{
             then "fum" for 6 moves, then repeat.
          */
 
-        if(moveCount >= 0 && moveCount <= 6){
-            return "fee";
-        } else if(moveCount > 6 && moveCount <= 11){
-            return "fie";
-        } else if(moveCount >= 12 && moveCount <= 17){
-            return "foe";
-        }else if(moveCount >= 18 && moveCount <= 24){
-            return "fum";
-        }
         if(moveCount > 24){
             moveCount = 0;
         }
-    }
 
+        if(moveCount <= 6){
+            return "fee";
+        } else if(moveCount <= 11){
+            return "fie";
+        } else if(moveCount <= 17){
+            return "foe";
+        }else{
+            return "fum";
+        }
+    }
 
     public Action getMove(CritterInfo info){
 
