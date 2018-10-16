@@ -9,19 +9,21 @@ public class Bear extends Critter{
     Random dice = new Random();
     private int number;
     private int moveCount = 0;
+    private Color color;
     private boolean polar;
+
 
     public Bear(){
 
         this.polar = isPolar();
-        getColor();
+        this.color = getColor();
     }
 
 
     public boolean isPolar(){
 
         number = dice.nextInt(2);
-        if(number == 0)
+        if(number == 1)
             return true;
         else
             return false;
@@ -35,7 +37,7 @@ public class Bear extends Critter{
             Color.BLACK otherwise (when polar is false)
          */
 
-        if(this.polar){
+        if(polar){
             return Color.WHITE;
         }else{
             return Color.BLACK;
