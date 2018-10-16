@@ -4,13 +4,13 @@ package com.github.khardrix.AnimalKingdom;
 import java.awt.*;
 import java.util.Random;
 
+
 public class Tiger extends Critter{
 
     private Random dice = new Random();
     private int moveCount = 0;
     private Color color;
     private int randomNumber;
-
 
 
     public Tiger(){
@@ -21,8 +21,8 @@ public class Tiger extends Critter{
             and one third being blue.
             Use the "step" button to make sure that the colors alternate properly.
             They should keep these initial colors for three moves.
-            That means that they should stay this color while
-            the simulator is indicating that it is step 0, step 1, and step 2.
+            That means that they should stay this color
+            while the simulator is indicating that it is step 0, step 1, and step 2.
             They should switch colors when the simulator indicates that
             you are up to step 3 and should stay with these new colors for steps 4 and 5.
             Then you should see a new color scheme for steps 6, 7, and 8 and so on.
@@ -33,7 +33,7 @@ public class Tiger extends Critter{
             They shouldn't end up clustering together anywhere.
          */
 
-        this.color = getColor();
+        randomizeColor();
     }
 
 
@@ -46,6 +46,19 @@ public class Tiger extends Critter{
             for the next three moves, and so on.
          */
 
+        Color newColor;
+        if(moveCount % 3 == 0){
+            moveCount = 0;
+            do{
+                newColor = randomizeColor();
+            }while(color == newColor);
+            color = newColor;
+        }
+        return color;
+    }
+
+
+    public Color randomizeColor(){
 
         randomNumber = dice.nextInt(3);
         if(randomNumber == 0)
@@ -76,11 +89,6 @@ public class Tiger extends Critter{
          */
 
         moveCount++;
-        if(moveCount % 3 == 0) {
-            this.color = getColor();
-            moveCount = 0;
-        }
-
         if(info.getFront() == Neighbor.OTHER)
             return Action.INFECT;
         else if((info.getFront() == Neighbor.WALL) || (info.getRight() == Neighbor.WALL))

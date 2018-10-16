@@ -4,6 +4,7 @@ package com.github.khardrix.AnimalKingdom;
 import java.awt.*;
 import java.util.Random;
 
+
 public class Bear extends Critter{
 
     private Random dice = new Random();
