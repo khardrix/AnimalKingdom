@@ -47,24 +47,18 @@ public class Giant extends  Critter{
             then "fum" for 6 moves, then repeat.
          */
 
-        while(moveCount >= 0 && moveCount <= 6){
+        if(moveCount >= 0 && moveCount <= 6){
             return "fee";
-        }
-        while(moveCount > 6 && moveCount <= 11){
+        } else if(moveCount > 6 && moveCount <= 11){
             return "fie";
-        }
-        while(moveCount >= 12 && moveCount <= 17){
+        } else if(moveCount >= 12 && moveCount <= 17){
             return "foe";
-        }
-        while(moveCount >= 18 && moveCount <= 24){
+        }else if(moveCount >= 18 && moveCount <= 24){
             return "fum";
         }
         if(moveCount > 24){
             moveCount = 0;
         }
-
-
-
     }
 
 
