@@ -1,7 +1,7 @@
 # AnimalKingdom
 Animal Kingdom
 
-#Final Project - Animal Kingdom
+Final Project - Animal Kingdom
 
 This assignment will give you practice with defining classes. You are to write a set of classes that define the behavior 
 of certain animals. You will be given a program that runs a simulation of a world with many animals wandering around in it. 
